@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>For My Person</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            background: #f9f7f4;
+            color: #444;
+            font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .wrap {
+            text-align: center;
+            padding: 3rem 2rem;
+            max-width: 550px;
+        }
+        h1 {
+            font-size: 2rem;
+            font-weight: 300;
+            letter-spacing: 1px;
+            color: #333;
+            margin-bottom: 1.5rem;
+        }
+        .divider {
+            width: 50px;
+            height: 1px;
+            background: #ccc;
+            margin: 0 auto 2rem;
+        }
+        .desc {
+            font-size: 1rem;
+            color: #666;
+            line-height: 1.8;
+            margin-bottom: 2.5rem;
+        }
+        .btn {
+            background: transparent;
+            border: 1px solid #bbb;
+            color: #555;
+            padding: 0.7rem 1.6rem;
+            border-radius: 999px;
+            font-size: 0.9rem;
+            cursor: pointer;
+            transition: all .3s ease;
+            margin: 0 0.4rem;
+        }
+        .btn:hover {
+            border-color: #888;
+            color: #222;
+        }
+        #out {
+            margin-top: 2rem;
+            font-size: 1rem;
+            color: #777;
+            min-height: 24px;
+        }
+    </style>
+</head>
+<body>
+    <div class="wrap">
+        <h1>For My Best Friend</h1>
+        <div class="divider"></div>
+        <p class="desc">
+            无需刻意维系，自在默契，彼此照亮。<br>
+            是朋友，是底气，是岁岁年年。
+        </p>
+        <button class="btn" onclick="say()">一句话给你</button>
+        <button class="btn" onclick="track()">我们的陪伴</button>
+        <div id="out"></div>
+    </div>
+
+    <script>
+        let n = 0;
+        const lines = [
+            同频的人，永远不散。
+            舒服自在，胜过千言万语。
+            你懂我，我信你。
+            并肩成长，温柔坚定。
+            彼此撑腰，岁岁同行。
+            是偏爱，是例外，是首选。
+        ];
+        function say() {
+            const i = Math.floor(Math.random() * lines.length);
+            document.getElementById("out").innerText = lines[i];
+        }
+        function track() {
+            n++;
+            document.getElementById("out").innerText = `陪伴值 · ${n}`;
+        }
+    </script>
+</body>
+</html>
